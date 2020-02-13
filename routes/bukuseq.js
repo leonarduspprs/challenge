@@ -3,7 +3,7 @@ module.exports = function(app) {
   const { check, validationResult } = require("express-validator");
   /* GET todo listing. */
   app.get("/books", function(req, res, next) {
-    model.bukuseqq
+    model.`bukuseqq`
       .findAll({})
       .then(bukuseqqs =>
         res.json({
@@ -174,9 +174,9 @@ module.exports = function(app) {
   );
   /* GET todo listing. */
   /* Delete todo. */
-  app.delete("todos/:id", function(req, res, next) {
+  app.delete("books/:id", function(req, res, next) {
     const todo_id = req.params.id;
-    model.Todo.destroy({
+    model.bukuseqq.destroy({
       where: {
         id: todo_id
       }
@@ -184,7 +184,7 @@ module.exports = function(app) {
       .then(status =>
         res.json({
           error: false,
-          message: "todo has been delete."
+          message: "data has been delete."
         })
       )
       .catch(error =>
