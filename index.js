@@ -6,7 +6,7 @@ var app = express();
 app.use(logger("dev"));
 app.use(express.json());
 
-require("./routes/todos.js")(app);
+require("./routes/bukuseq.js")(app);
 // Create a Server
 var server = app.listen(3000, "127.0.0.1", function() {
 var host = server.address().address;
